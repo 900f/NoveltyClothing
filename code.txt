@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Novelty Clothing</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/index copy.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <style>
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            margin-top: 10px; /* Reduced margin for closer alignment to text */
+        }
+        .product-box {
+            background: #202020;
+            border: 1px solid #c70039;
+            border-radius: 10px;
+            width: 350px;
+            height: 350px; /* Increased vertical size */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .product-box img {
+            width: 100%;
+            height: 60%; /* Adjusted image height for larger boxes */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product-box p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .buy-button {
+            background: #c70039;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+        .buy-button:hover {
+            background: #a0002e;
+        }
+        .header-content {
+            margin-top: 20px; /* Moved text higher */
+        }
+        .header-content-box .firstline {
+            font-size: 65px; /* Restored original font size */
+            margin-bottom: 10px; /* Closer spacing */
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="cursor"></div>
+        <div id="loader"></div>
+        <div id="breaker"></div>
+        <div id="breaker-two"></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/favicon.png" alt="logo">
+            </a>
+        </div>
+        <div id="header">
+            <div id="particles"></div>
+            <div class="header-content">
+                <div class="header-content-box">
+                    <div class="firstline">
+                        <!-- Anchor link for scrolling -->
+                        <a href="#products" class="title-link" style="color: inherit; text-decoration: none;">
+                            Welcome to Novelty Clothing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="products" class="product-container">
+            <div class="product-box">
+                <img src="images/product1.jpg" alt="Product 1">
+                <p>Hoodie</p>
+                <button class="buy-button">Buy</button>
+            </div>
+            <div class="product-box">
+                <img src="images/product2.jpg" alt="Product 2">
+                <p>Hoodie1</p>
+                <button class="buy-button">Buy</button>
+            </div>
+            <div class="product-box">
+                <img src="images/product3.jpg" alt="Product 3">
+                <p>Hoodie2</p>
+                <button class="buy-button">Buy</button>
+            </div>
+
+            <!-- Second row of products -->
+            <div class="product-box">
+                <img src="images/product4.jpg" alt="Product 4">
+                <p>Hoodie3</p>
+                <button class="buy-button">Buy</button>
+            </div>
+            <div class="product-box">
+                <img src="images/product5.jpg" alt="Product 5">
+                <p>Hoodie4</p>
+                <button class="buy-button">Buy</button>
+            </div>
+            <div class="product-box">
+                <img src="images/product6.jpg" alt="Product 6">
+                <p>Hoodie5</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS("particles", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        document.querySelector('.title-link').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
